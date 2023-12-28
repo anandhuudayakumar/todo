@@ -23,11 +23,18 @@ public class Todo {
     @Field
     private Email email;
 
+    @Field
+    private User createdUser;
+
+    @Field User lastModifiedUser;
+
     public Todo() {
         this.todoName = LocalDate.now().toString();
         this.lineItems = new ArrayList<>();
         this.isDeleted = false;
         this.email = new Email();
+        this.createdUser = new User();
+        this.lastModifiedUser = new User();
     }
 
     public String getTodoId() {
@@ -68,5 +75,21 @@ public class Todo {
 
     public void setEmail(Email email) {
         this.email = email;
+    }
+
+    public User getCreatedUser() {
+        return createdUser;
+    }
+
+    public void setCreatedUser(User createdUser) {
+        this.createdUser = createdUser;
+    }
+
+    public User getLastModifiedUser() {
+        return lastModifiedUser;
+    }
+
+    public void setLastModifiedUser(User lastModifiedUser) {
+        this.lastModifiedUser = lastModifiedUser;
     }
 }

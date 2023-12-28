@@ -1,13 +1,71 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Thank You</title>
+    <title>Todo Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 70%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #dddddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
 <body>
+
 <div>
-    <h1>Thank You For Choosing Us</h1>
-    <p>We appreciate your business and look forward to serving you again.</p>
+
+    Hi <span th:text="${todo.createdUser.lastName}"></span>,
+    <p>
+        Your todo has been successfully created. Please see the below table for details
+    </p>
 </div>
+
+<h1>Todo Details</h1>
+
+<table>
+    <tr>
+        <th>Todo Name</th>
+        <td th:text="${todo.todoName}"></td>
+    </tr>
+    <tr>
+        <th>Line Items</th>
+        <td>
+            <ul>
+                <li th:each="lineItem : ${todo.lineItems}" th:text="${lineItem.lineItemName}"></li>
+            </ul>
+        </td>
+    </tr>
+</table>
+<p>Thank You For Choosing Us</p>
+<p>Look forward to serving you again.</p>
 </body>
 </html>
