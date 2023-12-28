@@ -31,6 +31,7 @@ public class TodoServiceImpl  implements TodoService{
             String creationEmailSubject = todo.getTodoName()+" Created Successfully";
 
             Context context = new Context();
+            context.setVariable("todo",todo);
             String creationEmailMessage = thymeleafService.processTemplate("CreationEmailTemplate.html", context);
             emailService.sentEmail(todo.getEmail().getEmailEmailAddress(),creationEmailSubject, creationEmailMessage);
             logger.info("successfully send email to user: "+todo.getEmail().getEmailEmailAddress());
