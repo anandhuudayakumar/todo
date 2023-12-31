@@ -2,7 +2,7 @@ package com.todo.todov1.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.todo.todov1.enums.STATUS;
+import com.todo.todov1.enums.Enum.STATUS;
 
 import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
