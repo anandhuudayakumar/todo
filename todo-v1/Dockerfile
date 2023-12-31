@@ -1,5 +1,5 @@
 # Use the official OpenJDK base image for Java 17
-FROM adoptopenjdk:17-jre-hotspot as builder
+FROM openjdk:17-jre as builder
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -19,7 +19,7 @@ COPY . .
 RUN ./gradlew bootJar
 
 # Create a new image using a smaller base image
-FROM adoptopenjdk:17-jre-hotspot
+FROM openjdk:17-jre-hotspot
 
 # Set the working directory inside the container
 WORKDIR /app
