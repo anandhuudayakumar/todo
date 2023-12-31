@@ -2,8 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="todo-v1.todo-v1.main~1" target="17" />
-      <module name="todo-v1.todo-v1.test~1" target="17" />
+      <module name="todo-v1.todo-v1.main" target="17" />
+      <module name="todo-v1.todo-v1.test" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

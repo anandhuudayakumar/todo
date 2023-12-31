@@ -16,8 +16,8 @@ import java.util.Timer;
 
 @Service
 public class EmailServiceImpl implements EmailService{
-    @Autowired
-    private Timer timer;
+
+    private final Timer timer = new Timer();
 
     Logger logger = LoggerFactory.getLogger(EmailServiceImpl.class);
     @Value("${email.sender.username}")
